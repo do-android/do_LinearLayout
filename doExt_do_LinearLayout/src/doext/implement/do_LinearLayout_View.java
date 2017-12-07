@@ -73,7 +73,7 @@ public class do_LinearLayout_View extends LinearLayout implements DoIUIModuleVie
 	@SuppressLint("ClickableViewAccessibility")
 	@Override
 	public boolean onTouchEvent(MotionEvent ev) {
-		if (!this.model.getEventCenter().containsEvent("touch")) {
+		if (!isEnabled() || (!this.model.getEventCenter().containsEvent("touch"))) {
 			return false;
 		}
 		switch (ev.getAction()) {
